@@ -17,7 +17,7 @@ const MenuMobile = memo(({ onClick }: HamburgerProps) => {
     visible: {
       x: 0,
       opacity: 1,
-      transition: { duration: 0.3 },
+      transition: { duration: 0.2 },
     },
   };
 
@@ -38,6 +38,7 @@ const MenuMobile = memo(({ onClick }: HamburgerProps) => {
           height: "100vh",
           backgroundColor: "#009688",
           color: "white",
+          zIndex:'1',
         }}
       >
         <Button onClick={onClick} component={Link} href="/" color="inherit">
