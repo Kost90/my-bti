@@ -1,3 +1,6 @@
+import { Inter } from 'next/font/google';
+import CssBaseline from '@mui/material/CssBaseline';
+
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/header/Header";
@@ -7,6 +10,8 @@ export const metadata: Metadata = {
   description: "Created technical documents",
 };
 
+export const inter = Inter({ subsets: ['latin'] });
+
 export default function RootLayout({
   children,
 }: {
@@ -14,7 +19,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className={`${inter.className} antialiased`}>
+        <CssBaseline/>
         <div className="layout">
           <Header />
           <main className="main">{children}</main>
