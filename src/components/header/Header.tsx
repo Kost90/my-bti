@@ -22,25 +22,54 @@ const Header = () => {
 
   return (
     <>
-      <AppBar position="static" sx={{ backgroundColor: "#009688" }}>
+      <AppBar position="static" sx={{ backgroundColor: "inherit" }}>
         <Toolbar sx={{ justifyContent: "space-between" }}>
-          <Typography variant="h6" component="div">
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ color: "#22C55E", fontWeight: "bold" }}
+          >
             My-BTI Logo
           </Typography>
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <Button component={Link} href="/" color="inherit">
+          <Box sx={{ display: { xs: "none", md: "flex", color: "black" } }}>
+            <Button
+              component={Link}
+              href="/"
+              color="inherit"
+              sx={{ fontWeight: "bold" }}
+            >
               Головна
             </Button>
-            <Button component={Link} href="/aboutus" color="inherit">
+            <Button
+              component={Link}
+              href="/aboutus"
+              color="inherit"
+              sx={{ fontWeight: "bold" }}
+            >
               Про нас
             </Button>
-            <Button component={Link} href="/services" color="inherit">
+            <Button
+              component={Link}
+              href="/services"
+              color="inherit"
+              sx={{ fontWeight: "bold" }}
+            >
               Послуги
             </Button>
-            <Button component={Link} href="/clients" color="inherit">
+            <Button
+              component={Link}
+              href="/clients"
+              color="inherit"
+              sx={{ fontWeight: "bold" }}
+            >
               Наші клієнти
             </Button>
-            <Button component={Link} href="/contacts" color="inherit">
+            <Button
+              component={Link}
+              href="/contacts"
+              color="inherit"
+              sx={{ fontWeight: "bold" }}
+            >
               Контакти
             </Button>
           </Box>
