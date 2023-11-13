@@ -3,17 +3,15 @@ import Greenelipsis from "../../../public/assets/svg/greenelipsis.svg";
 import Orangevector from "../../../public/assets/svg/orangvector.svg";
 import Dangervector from "../../../public/assets/svg/dangervector.svg";
 import Purpleelipsis from "../../../public/assets/svg/purpleelipsis.svg";
-import { Box} from "@mui/material";
-import TechnicalPasport from "./content/technicalpasport/TechnicalPasport";
+import { Box } from "@mui/material";
+import CarouselComponent from "../carousel/Carousel";
 import styles from "./Herosection.module.css";
-import { mainbox, realtivebox} from "./styleconstans";
+import { mainbox, realtivebox } from "./styleconstans";
 
 const HerosectionPasport = async () => {
   return (
     <Box sx={mainbox}>
-      <Box
-        sx={realtivebox}
-      >
+      <Box sx={realtivebox}>
         <Image
           src={Orangevector}
           alt="orange vector"
@@ -24,7 +22,7 @@ const HerosectionPasport = async () => {
           alt="svg elipsis"
           className={styles.green_elipsis}
         />
-        <TechnicalPasport/>
+        <CarouselComponent />
         <Image
           src={Dangervector}
           alt="danger vector"

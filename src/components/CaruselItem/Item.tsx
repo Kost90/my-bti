@@ -5,21 +5,26 @@ import {
   heroText,
   paragraphStyle,
   btnStyle,
-} from "./stylesconstans";
+} from "./stylesconstants";
 
-const TechnicalPasport = async () => {
+interface PropsParams {
+  name: string;
+  description: string;
+  path: string;
+}
+
+const Item = async ({ name, description, path }: PropsParams) => {
   return (
     <Box sx={contentbox}>
       <Typography variant="h5" component="h3" align="center" sx={heroText}>
-        Замовити технічний паспорт на нерухомість
+        {name}
       </Typography>
       <Typography align="center" paragraph sx={paragraphStyle}>
-        Скористайся послугою розрахунку вартості технічного паспорту на обєкт
-        нерухомості та бронювання дати та часу виїзда інженера
+        {description}
       </Typography>
       <Button
         component={Link}
-        href="/services/technicalpasport"
+        href={path}
         variant="contained"
         size={"medium"}
         color="success"
@@ -31,4 +36,4 @@ const TechnicalPasport = async () => {
   );
 };
 
-export default TechnicalPasport;
+export default Item;
