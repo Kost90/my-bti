@@ -31,7 +31,7 @@ const Header = () => {
           >
             My-BTI Logo
           </Typography>
-          <Box sx={{ display: { xs: "none", md: "flex", color: "black" } }}>
+          <Box sx={{ display: { xs: "none", md: "flex", color: "#556987" } }}>
             <Button
               component={Link}
               href="/"

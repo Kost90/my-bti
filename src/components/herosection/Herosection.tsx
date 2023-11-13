@@ -1,41 +1,44 @@
 import Image from "next/image";
-import Greenelipsis from "../../../public/assets/svg/greenelipsis.svg";
-import Orangevector from "../../../public/assets/svg/orangvector.svg";
-import Dangervector from "../../../public/assets/svg/dangervector.svg";
-import Purpleelipsis from "../../../public/assets/svg/purpleelipsis.svg";
-import { Box } from "@mui/material";
-import CarouselComponent from "../carousel/Carousel";
-import styles from "./Herosection.module.css";
-import { mainbox, realtivebox } from "./styleconstans";
+import { Typography, Box, List, ListItem, Stack } from "@mui/material";
+import Checkbox from "../../../public/assets/svg/Checkbox.svg";
+import { title, TextContainer, listText } from "./stylesconstants";
 
-const HerosectionPasport = async () => {
+function Herosection() {
   return (
-    <Box sx={mainbox}>
-      <Box sx={realtivebox}>
-        <Image
-          src={Orangevector}
-          alt="orange vector"
-          className={styles.orange_vector}
-        />
-        <Image
-          src={Greenelipsis}
-          alt="svg elipsis"
-          className={styles.green_elipsis}
-        />
-        <CarouselComponent />
-        <Image
-          src={Dangervector}
-          alt="danger vector"
-          className={styles.danger_vector}
-        />
-        <Image
-          src={Purpleelipsis}
-          alt="purple elipsis"
-          className={styles.purple_elipsis}
-        />
-      </Box>
+    <Box sx={TextContainer}>
+      <Typography variant="h4" sx={title}>
+        <span style={{ textTransform: "uppercase", color: "#22C55E" }}>
+          Моє БТІ
+        </span>{" "}
+        - це Ваш найдійний помічник з оформлення нерухомості.
+      </Typography>
+      <List dense={true}>
+        <Stack spacing={2}>
+          <ListItem>
+            <Image src={Checkbox} alt="checkbox" />
+            <Typography variant="h6" sx={listText}>
+              Сучасний підхід до надання якісних послуг у сфері оформлення
+              нерухомості
+            </Typography>
+          </ListItem>
+
+          <ListItem>
+            <Image src={Checkbox} alt="checkbox" />
+            <Typography variant="h6" sx={listText}>
+              Захист прав та інтересів клієнтів
+            </Typography>
+          </ListItem>
+
+          <ListItem>
+            <Image src={Checkbox} alt="checkbox" />
+            <Typography variant="h6" sx={listText}>
+              Дотримання термінів надання послуг, згідно з укладеним договором
+            </Typography>
+          </ListItem>
+        </Stack>
+      </List>
     </Box>
   );
-};
+}
 
-export default HerosectionPasport;
+export default Herosection;

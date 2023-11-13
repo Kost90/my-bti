@@ -1,11 +1,37 @@
-import Image from 'next/image'
-import { Container } from '@mui/material'
-import HerosectionPasport from '@/components/herosection/Herosection'
+import { Box, Container } from "@mui/material";
+import Carouselsection from "@/components/carouselsection/Carouselsection";
+import Herosection from "@/components/Herosection/Herosection";
+import CardList from "@/components/cards/CardList";
+import styles from "./homepage.module.css";
 
 export default function Home() {
   return (
-    <Container sx={{marginTop: {xs:'40px', md:'80px'}}}>
-      <HerosectionPasport/>
-    </Container>
-  )
+    <>
+      <Box sx={{ width: "100%" }}>
+        <section className={styles.hero_section_bg}>
+          <Container
+            sx={{
+              paddingTop: { xs: "40px", md: "80px" },
+              paddingBottom: { xs: "40px", md: "80px" },
+              display: { xs: "block", md: "flex" },
+              gap: "80px",
+            }}
+          >
+            <Herosection />
+            <Carouselsection />
+          </Container>
+        </section>
+        <section className={styles.card_list_section}>
+          <Container
+            sx={{
+              paddingTop: { xs: "40px", md: "80px" },
+              paddingBottom: { xs: "40px", md: "80px" },
+            }}
+          >
+            <CardList />
+          </Container>
+        </section>
+      </Box>
+    </>
+  );
 }

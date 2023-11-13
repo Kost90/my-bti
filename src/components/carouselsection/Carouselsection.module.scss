@@ -1,61 +1,38 @@
 .orange_vector {
     width: 60px;
     height: 60px;
-    position: absolute;
-    top: 1%;
-    left: 1%;
 }
 
 .green_elipsis {
-    position: absolute;
-    right: 3%;
-    top: 3%;
     width: 60px;
     height: 60px;
+    margin-right: 10px;
+    margin-top: 8px;
 }
 
 .danger_vector {
     width: 60px;
     height: 65px;
-    position: absolute;
-    bottom: 1%;
-    right: 1%;
 }
 
 .purple_elipsis {
-    position: absolute;
     width: 60px;
     height: 60px;
-    bottom: 3%;
-    left: 3%;
+    margin-left: 10px;
+}
+
+.svg_container {
+    display: flex;
+    justify-content: space-between;
 }
 
 @media (min-width: 768px) {
-    .orange_vector {
-        left: 0;
-    }
-
     .green_elipsis {
-        right: 2%;
-        top: 2%;
         width: 75px;
-    }
-
-    .danger_vector {
-        bottom: 1%;
-        right: 0;
     }
 
     .purple_elipsis {
-        bottom: 2%;
-        left: 2%;
         width: 75px;
-    }
-}
-
-@media (min-width: 1024px) {
-    .danger_vector {
-        bottom: 0;
     }
 }
 
@@ -63,12 +40,9 @@
     .orange_vector {
         width: 85px;
         height: 85px;
-        top: 0;
     }
 
     .green_elipsis {
-        right: 1%;
-        top: 2%;
         width: 85px;
     }
 
@@ -79,6 +53,5 @@
 
     .purple_elipsis {
         width: 85px;
-        left: 1%;
     }
 }
