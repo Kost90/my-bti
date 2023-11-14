@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useState, useCallback } from "react";
 import {
   AppBar,
@@ -8,10 +9,20 @@ import {
   Box,
   IconButton,
 } from "@mui/material";
+import Logo from '../../../public/assets/svg/logo.svg'
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import Link from "next/link";
 import MenuMobile from "@/components/menumobile/MenuMobile";
+import styles from './header.module.css'
+
+const log_container = {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+  margin: '5px 0',
+}
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -24,13 +35,16 @@ const Header = () => {
     <>
       <AppBar position="static" sx={{ backgroundColor: "inherit" }}>
         <Toolbar sx={{ justifyContent: "space-between" }}>
+          <Box sx={log_container}>
+          <Image src={Logo} alt="logo" className={styles.logo}/>
           <Typography
             variant="h6"
             component="div"
             sx={{ color: "#22C55E", fontWeight: "bold" }}
           >
-            My-BTI Logo
+            MY-BTI
           </Typography>
+          </Box>
           <Box sx={{ display: { xs: "none", md: "flex", color: "#556987" } }}>
             <Button
               component={Link}
