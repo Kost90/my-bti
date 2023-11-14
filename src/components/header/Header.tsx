@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useState, useCallback } from "react";
 import {
+  Container,
   AppBar,
   Toolbar,
   Typography,
@@ -34,6 +35,7 @@ const Header = () => {
   return (
     <>
       <AppBar position="static" sx={{ backgroundColor: "inherit" }}>
+        <Container>
         <Toolbar sx={{ justifyContent: "space-between" }}>
           <Box sx={log_container}>
           <Image src={Logo} alt="logo" className={styles.logo}/>
@@ -103,6 +105,7 @@ const Header = () => {
             </IconButton>
           )}
         </Toolbar>
+        </Container>
       </AppBar>
       {isOpen ? <MenuMobile onClick={handelChange} /> : null}
     </>
