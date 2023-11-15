@@ -3,7 +3,7 @@ import { Typography, Box, List, ListItem, Stack } from "@mui/material";
 import Checkbox from "../../../public/assets/svg/Checkbox.svg";
 import { title, TextContainer, listText } from "./stylesconstants";
 
-function Herosection() {
+const Herosection = () => {
   return (
     <Box sx={TextContainer}>
       <Typography variant="h4" sx={title}>

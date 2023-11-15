@@ -1,6 +1,6 @@
 import { Box, Container } from "@mui/material";
 import Carouselsection from "@/components/carouselsection/Carouselsection";
-import Herosection from "@/components/Herosection/Herosection";
+import Herosection from "@/components/herosection/Herosection";
 import CardList from "@/components/cards/CardList";
 import AboutUs from "@/components/aboutus/AboutUs";
 import WhyWe from "@/components/whywe/WhyWe";
