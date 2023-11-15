@@ -1,7 +1,15 @@
-import Image from "next/image";
 import { Box, Typography } from "@mui/material";
+import SideSection from "./Sidesection";
 import ContactForm from "../forms/contactForm/ContactForm";
 import { title } from "./stylesconstans";
+
+const containerBox = {
+  display: "flex",
+  flexDirection: { xs: "column-reverse", md: "row" },
+  alignItems: "center",
+  justifyContent: { xs: "center", md: "space-between" },
+  gap: { xs: "20px", md: "0" },
+};
 
 function Contacts() {
   return (
@@ -9,7 +17,8 @@ function Contacts() {
       <Typography variant="h4" sx={title}>
         ЗАЛИШИТИ ПОВІДОМЛЕННЯ
       </Typography>
-      <Box>
+      <Box sx={containerBox}>
+        <SideSection />
         <ContactForm />
       </Box>
     </Box>
