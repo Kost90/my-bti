@@ -69,4 +69,7 @@ const MenuMobile = memo(({ onClick }: HamburgerProps) => {
   );
 });
 
+
+MenuMobile.displayName ='MenuMobile';
+
 export default MenuMobile;
