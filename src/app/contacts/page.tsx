@@ -1,10 +1,19 @@
-import React from 'react'
+import { Container } from "@mui/material";
+import Contacts from "@/components/contacts/Contacts";
 
-const Contacts =async () => {
-
+const ContactsPage = async () => {
   return (
-    <div>Contacts page</div>
-  )
-}
+    <div style={{ width: "100%" }}>
+      <Container
+        sx={{
+          paddingTop: { xs: "40px", md: "80px" },
+          paddingBottom: { xs: "40px", md: "80px" },
+        }}
+      >
+        <Contacts />
+      </Container>
+    </div>
+  );
+};
 
-export default Contacts
+export default ContactsPage;

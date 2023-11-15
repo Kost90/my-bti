@@ -7,7 +7,7 @@ export const contrContent = {
 
 export const contrCards = {
   display: "flex",
-  alignItems: { xs: "center", md: "base-line" },
+  alignItems: { xs: "center", md: "baseline" },
   justifyContent: "center",
   flexDirection: { xs: "column", md: "row" },
   gap: { xs: "30px", md: "60px" },
