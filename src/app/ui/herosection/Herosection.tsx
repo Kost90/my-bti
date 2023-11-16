@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Typography, Box, List, ListItem, Stack } from "@mui/material";
-import Checkbox from "../../../public/assets/svg/Checkbox.svg";
+import Checkbox from "../../../../public/assets/svg/Checkbox.svg";
 import { title, TextContainer, listText } from "./stylesconstants";
 
 const Herosection = () => {

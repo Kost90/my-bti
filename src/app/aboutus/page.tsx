@@ -1,6 +1,6 @@
 import { Container } from '@mui/material'
 import styles from './aboutUsPage.module.css'
-import AboutUs from '@/components/aboutus/AboutUs'
+import AboutUs from '@/app/ui/aboutus/AboutUs'
 
 const AboutUsPage =async () => {
 

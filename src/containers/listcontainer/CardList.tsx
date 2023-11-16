@@ -1,8 +1,8 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
-import Card from "./Card";
+import Card from "../../components/cards/Card";
 import { cardContent } from "@/constants/CardsData";
-import { title, flexContainer } from "./stylesconstans";
+import { title, flexContainer } from "../../components/cards/stylesconstans";
 
 const CardList = async () => {
   return (

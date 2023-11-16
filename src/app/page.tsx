@@ -1,9 +1,9 @@
 import { Box, Container } from "@mui/material";
-import Carouselsection from "@/components/carouselsection/Carouselsection";
-import Herosection from "@/components/herosection/Herosection";
-import CardList from "@/components/cards/CardList";
-import AboutUs from "@/components/aboutus/AboutUs";
-import WhyWe from "@/components/whywe/WhyWe";
+import Carouselsection from "@/containers/carouselsection/Carouselsection";
+import Herosection from "@/app/ui/herosection/Herosection";
+import CardList from "@/containers/listcontainer/CardList";
+import AboutUs from "@/app/ui/aboutus/AboutUs";
+import WhyWe from "@/app/ui/whywe/WhyWe";
 import Contacts from "@/components/contacts/Contacts";
 import styles from "./homepage.module.css";
 
