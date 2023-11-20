@@ -1,0 +1,6 @@
+.ul_container {
+  @apply flex flex-col gap-5;
+}
+.ul_container li {
+  @apply flex gap-3;
+}/*# sourceMappingURL=Herosection.module.css.map */

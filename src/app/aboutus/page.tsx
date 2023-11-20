@@ -1,11 +1,12 @@
 import { Container } from '@mui/material'
 import styles from './aboutUsPage.module.css'
-import AboutUs from '@/app/ui/aboutus/AboutUs'
+import AboutUs from '@/ui/aboutus/AboutUs'
+
 
 const AboutUsPage =async () => {
 
   return (
-    <section className={styles.aboutus_section}>
+        <section className={styles.aboutus_section}>
             <Container  sx={{
               paddingTop: { xs: "40px", md: "80px" },
               paddingBottom: { xs: "40px", md: "80px" },
@@ -13,6 +14,7 @@ const AboutUsPage =async () => {
               <AboutUs/>
             </Container>
         </section>
+        
   )
 }
 

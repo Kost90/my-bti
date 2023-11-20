@@ -7,7 +7,7 @@ import {
   listText,
   TextContainer,
 } from "./stylesconstans";
-import AboutUsImg from "../../../../public/assets/svg/AboutUsImg.png";
+import AboutUsImg from "../../../public/assets/svg/AboutUsImg.png";
 import styles from "./aboutus.module.css";
 
 const AboutUs = async () => {
