@@ -37,4 +37,5 @@ body {
   display: flex;
   flex: 1;
   overflow: auto;
+  flex-direction: column;
 }

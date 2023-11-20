@@ -4,6 +4,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/header/Header";
+import Footer from '@/components/footer/Footer';
 
 export const metadata: Metadata = {
   title: "My BTI",
@@ -23,7 +24,10 @@ export default function RootLayout({
         <CssBaseline/>
         <div className="layout">
           <Header />
-          <main className="main">{children}</main>
+          <main className="main">
+            {children}
+            <Footer/>
+          </main>
         </div>
       </body>
     </html>
