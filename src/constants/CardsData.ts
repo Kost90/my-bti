@@ -9,7 +9,7 @@ export const cardContent = [
       "- виготовлення технічної документації щодо поділу/обєднання обєкту",
       "- технічне обстеження/технічний звіт",
     ],
-    path: "services/technicalpasport",
+    path: "services/bookingeneer",
     src: TechnicalIcon,
   },
   {
@@ -20,7 +20,7 @@ export const cardContent = [
       "- Обєднання/поділ обєкту",
       "- Зміна цільового призначення обєкту",
     ],
-    path: "services/property",
+    path: "services/calcpropertyservices",
     src: PropertyServIcon,
   },
 ];

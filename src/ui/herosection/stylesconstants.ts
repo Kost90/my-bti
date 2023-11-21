@@ -2,6 +2,7 @@ export const title = {
     color: '#2A3342',
     fontWeight: '700',
     lineHeight: '34px',
+    textAlign:{xs:'center',md:'unset'}
 }
 
 export const TextContainer = {
