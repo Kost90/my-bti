@@ -1,10 +1,12 @@
-import React from 'react'
+import CardList from "@/containers/listcontainer/CardList";
+import React from "react";
 
-const Services =async () => {
-
+const Services = async () => {
   return (
-    <div>Services page</div>
-  )
-}
+    <div className="container my-7 md:my-14">
+      <CardList />
+    </div>
+  );
+};
 
-export default Services
+export default Services;
