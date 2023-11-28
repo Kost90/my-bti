@@ -1,3 +1,4 @@
+import StoreProvider from './StoreProvider';
 import { Inter } from 'next/font/google';
 import CssBaseline from '@mui/material/CssBaseline';
 
@@ -21,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
+        <StoreProvider>
         <CssBaseline/>
         <div className="layout">
           <Header />
@@ -29,6 +31,7 @@ export default function RootLayout({
             <Footer/>
           </main>
         </div>
+        </StoreProvider>
       </body>
     </html>
   );
