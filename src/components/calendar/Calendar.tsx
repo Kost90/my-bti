@@ -3,7 +3,9 @@ import { useState, useEffect, useCallback } from "react";
 import "react-datepicker/dist/react-datepicker.css";
 import DatesPicker from "./DatesPicker";
 import TimePicker from "./TimePicker";
-import styles from './Calendar.module.css'
+import { addBook } from "@/lib/features/booking/BookingSlicer";
+import { useAppDispatch } from "@/lib/hooks";
+import styles from "./Calendar.module.css";
 
 export type bookedArr = {
   date: string;
@@ -14,6 +16,7 @@ export default function Calendar() {
   const [currentDate, setcurrentDate] = useState<string>("");
   const [dates, setDates] = useState<bookedArr[]>([]);
   const [time, setTime] = useState<number[]>([]);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     if (currentDate) {
@@ -39,6 +42,14 @@ export default function Calendar() {
         ]);
       }
     }
+  }, [time]);
+
+  useEffect(() => {
+    const book = {
+      date: currentDate,
+      time: time[0],
+    };
+    dispatch(addBook(book));
   }, [time]);
 
   const handelAddDate = useCallback((data: Date) => {

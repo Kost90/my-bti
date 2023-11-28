@@ -4,7 +4,6 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import type { bookedArr } from "./Calendar";
 
-
 interface TimePickerProps {
   time: number[];
   dates: bookedArr[];
@@ -16,7 +15,6 @@ function TimePicker({ dates, curentDate, onChange, time }: TimePickerProps) {
   const [dateObj, setDateObj] = useState<Date[]>([]);
   const [excludedTimes, setExcludedTimes] = useState<Date[]>([]);
 
-  console.log("time component");
   useEffect(() => {
     if (curentDate) {
       const selectedDate = new Date(curentDate);
@@ -29,7 +27,6 @@ function TimePicker({ dates, curentDate, onChange, time }: TimePickerProps) {
 
   useEffect(() => {
     const newDateObjects: Date[] = [];
-
     dates.forEach((item) => {
       item.times.forEach((time) => {
         const dateString = `${item.date} ${time}:00`;
