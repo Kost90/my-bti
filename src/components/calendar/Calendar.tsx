@@ -1,9 +1,9 @@
 "use client";
-import { useState, useEffect } from "react";
-import DatePicker from "react-datepicker";
+import { useState, useEffect, useCallback } from "react";
 import "react-datepicker/dist/react-datepicker.css";
+import DatesPicker from "./DatesPicker";
 import TimePicker from "./TimePicker";
-import { isWeekdayAndPassday } from "./helpers";
+import styles from './Calendar.module.css'
 
 export type bookedArr = {
   date: string;
@@ -14,7 +14,7 @@ export default function Calendar() {
   const [currentDate, setcurrentDate] = useState<string>("");
   const [dates, setDates] = useState<bookedArr[]>([]);
   const [time, setTime] = useState<number[]>([]);
-  console.log("date component");
+
   useEffect(() => {
     if (currentDate) {
       const index = dates.findIndex((item) => item.date === currentDate);
@@ -41,10 +41,10 @@ export default function Calendar() {
     }
   }, [time]);
 
-  const handelAddDate = (data: Date) => {
+  const handelAddDate = useCallback((data: Date) => {
     const newDate = data.toISOString().split("T")[0];
     setcurrentDate(newDate);
-  };
+  }, []);
 
   const handelAddTime = (data: Date) => {
     const newHour = data.getHours();
@@ -52,21 +52,16 @@ export default function Calendar() {
   };
 
   return (
-    <div>
-      <h4>Оберіть дату виїзду:</h4>
-      <DatePicker
-        filterDate={isWeekdayAndPassday}
-        onChange={handelAddDate}
-        dateFormat={"dd.MM.yyyy"}
-        timeIntervals={120}
-        placeholderText="Оберіть свободну дату"
-      />
-      <TimePicker
-        time={time}
-        dates={dates}
-        curentDate={currentDate}
-        onChange={handelAddTime}
-      />
+    <div className={styles.container_pickers}>
+      <DatesPicker onChange={handelAddDate} currentDate={currentDate} />
+      {currentDate && (
+        <TimePicker
+          time={time}
+          dates={dates}
+          curentDate={currentDate}
+          onChange={handelAddTime}
+        />
+      )}
     </div>
   );
 }
