@@ -74,14 +74,6 @@ const Header = () => {
               </Button>
               <Button
                 component={Link}
-                href="/clients"
-                color="inherit"
-                sx={{ fontWeight: "bold" }}
-              >
-                Наші клієнти
-              </Button>
-              <Button
-                component={Link}
                 href="/contacts"
                 color="inherit"
                 sx={{ fontWeight: "bold" }}
