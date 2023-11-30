@@ -1,4 +1,4 @@
-.contactform {
+.bookform {
   @apply flex flex-col justify-center items-center gap-2 w-full max-w-lg bg-slate-100 p-5 rounded-lg;
 }
 
@@ -12,4 +12,8 @@
 
 .submit_btn {
   @apply p-2 md:p-3 border flex justify-center items-center rounded-md bg-green-600 text-white hover:bg-green-800 cursor-pointer;
+}
+
+.select {
+  @apply rounded-md p-2 border border-slate-400 focus:outline-none focus:border-green-400;
 }/*# sourceMappingURL=BookForm.module.css.map */

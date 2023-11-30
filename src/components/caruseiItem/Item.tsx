@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { Typography, Button, Box } from "@mui/material";
+import Button from "../button/Button";
+import { Typography, Box } from "@mui/material";
 import {
   contentbox,
   heroText,
   paragraphStyle,
-  btnStyle,
 } from "./stylesconstants";
 
 interface PropsParams {
@@ -22,15 +22,8 @@ const Item = async ({ name, description, path }: PropsParams) => {
       <Typography align="center" paragraph sx={paragraphStyle}>
         {description}
       </Typography>
-      <Button
-        component={Link}
-        href={path}
-        variant="contained"
-        size={"medium"}
-        color="success"
-        sx={btnStyle}
-      >
-        Замовити
+      <Button type={"button"}>
+        <Link href={path} key={path}>Замовити</Link>
       </Button>
     </Box>
   );

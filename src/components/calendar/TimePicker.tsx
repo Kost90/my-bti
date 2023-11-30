@@ -1,17 +1,17 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, memo } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import type { bookedArr } from "./Calendar";
+import { useAppSelector } from "@/lib/hooks";
 
 interface TimePickerProps {
   time: number[];
-  dates: bookedArr[];
   curentDate: string;
   onChange: (data: Date) => void;
 }
 
-function TimePicker({ dates, curentDate, onChange, time }: TimePickerProps) {
+const TimePicker = memo(({ curentDate, onChange, time }: TimePickerProps) => {
+  const dates = useAppSelector((state) => state.dates.dates);
   const [dateObj, setDateObj] = useState<Date[]>([]);
   const [excludedTimes, setExcludedTimes] = useState<Date[]>([]);
 
@@ -55,6 +55,8 @@ function TimePicker({ dates, curentDate, onChange, time }: TimePickerProps) {
       />
     </div>
   );
-}
+});
+
+TimePicker.displayName = "TimePicker";
 
 export default TimePicker;

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { Typography, Box } from "@mui/material";
 import Checkbox from "../../../public/assets/svg/Checkbox.svg";
 import { title, TextContainer, listText } from "./stylesconstants";

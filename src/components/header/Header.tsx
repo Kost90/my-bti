@@ -15,6 +15,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import Link from "next/link";
 import MenuMobile from "@/components/menumobile/MenuMobile";
+import { useAppDispatch, useAppSelector } from "@/lib/hooks";
+import { addTheme } from "@/lib/features/theme/ThemeSlicer";
 import styles from "./header.module.css";
 
 const log_container = {
@@ -27,9 +29,17 @@ const log_container = {
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const theme = useAppSelector((state) => state.theme.theme)
+  const dispatch = useAppDispatch();
 
   const handelChange = useCallback(() => {
-    setIsOpen((prev) => !prev);
+    if(theme === 'light'){
+      dispatch(addTheme('dark'))
+      setIsOpen((prev) => !prev);
+    }else{
+      dispatch(addTheme('light'))
+      setIsOpen((prev) => !prev);
+    }
   }, [isOpen]);
 
   return (
@@ -74,14 +84,6 @@ const Header = () => {
               </Button>
               <Button
                 component={Link}
-                href="/clients"
-                color="inherit"
-                sx={{ fontWeight: "bold" }}
-              >
-                Наші клієнти
-              </Button>
-              <Button
-                component={Link}
                 href="/contacts"
                 color="inherit"
                 sx={{ fontWeight: "bold" }}
@@ -107,7 +109,7 @@ const Header = () => {
           </Toolbar>
         </Container>
       </AppBar>
-      {isOpen ? <MenuMobile onClick={handelChange} /> : null}
+      <MenuMobile isOpen={isOpen} onClick={handelChange}/>
     </>
   );
 };

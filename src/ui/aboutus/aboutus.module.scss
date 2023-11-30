@@ -5,6 +5,10 @@
     height: 400px;
 }
 
+.h4{
+    @apply text-white uppercase font-bold;
+}
+
 @media (min-width: 1024px) {
     .img {
         display: block;

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Button from "../button/Button";
 import {
   Box,
   Paper,
@@ -6,10 +7,9 @@ import {
   List,
   ListItem,
   ListItemText,
-  Button,
 } from "@mui/material";
 import Link from "next/link";
-import { btnStyle, cardContainer, listContainer } from "./stylesconstans";
+import { cardContainer, listContainer } from "./stylesconstans";
 
 interface PropsParams {
   title: string;
@@ -23,7 +23,7 @@ const Card = async ({ title, services, path, src }: PropsParams) => {
     <Paper>
       <Box sx={cardContainer}>
         <Image src={src} alt="icon" />
-        <Typography variant="h4" sx={{ textAlign: "center" }}>
+        <Typography variant="h5" sx={{ textAlign: "center" }}>
           {title}
         </Typography>
         <List sx={listContainer}>
@@ -32,15 +32,8 @@ const Card = async ({ title, services, path, src }: PropsParams) => {
               <ListItemText primary={item} sx={{ color: "#556987" }} />
             </ListItem>
           ))}
-          <Button
-            component={Link}
-            href={path}
-            variant="contained"
-            size={"medium"}
-            color="success"
-            sx={btnStyle}
-          >
-            Детальніше
+          <Button type={"button"}>
+            <Link href={path} key={path}>Детальніше</Link>
           </Button>
         </List>
       </Box>

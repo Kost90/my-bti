@@ -1,52 +1,22 @@
 "use client";
+import { useRouter } from "next/navigation";
 import { useForm, SubmitHandler } from "react-hook-form";
+import Input from "@/components/input/Input";
 import { useAppSelector } from "@/lib/hooks";
 import { useAppDispatch } from "@/lib/hooks";
 import { addOrder } from "@/lib/features/orders/OrderSlice";
+import { TypeDevelopEnum, IFormInput } from "./models";
 import styles from "./BookForm.module.css";
-// import { string, object, number } from "yup";
-// import { yupResolver } from "@hookform/resolvers/yup";
-
-enum TypeDevelopEnum {
-  flat = "квартира",
-  house = "будинок",
-  other = "приміщення",
-}
-
-interface IFormInput {
-  name: string;
-  street: string;
-  number?: number;
-  typeDevelop: TypeDevelopEnum;
-  phone?: string;
-  email: string;
-  square: number;
-}
-
-// const phoneNumberRegex = /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/;
-// const bookSchema = {
-//   name: string().trim().required().min(3).max(40),
-//   email: string()
-//     .email()
-//     .required()
-//     .matches(/@[^.]*\./),
-//   phone: string().matches(phoneNumberRegex, "Is not a number"),
-//   typeDevelop: string().trim().required().min(3).max(40),
-//   street: string().trim().required().min(3).max(40),
-//   number: number(),
-//   square: number(),
-// };
 
 function BookForm() {
   const book = useAppSelector((state) => state.booking.booking);
   const order = useAppSelector((state) => state.orders.orders);
-
+  const router = useRouter();
   console.log(order);
   const dispatch = useAppDispatch();
   const {
     register,
     handleSubmit,
-    watch,
     reset,
     formState: { errors },
   } = useForm<IFormInput>();
@@ -55,8 +25,7 @@ function BookForm() {
     const booking = {
       ...book,
       name: data.name,
-      street: data.street,
-      number: data.number,
+      adress: data.adress,
       typeDevelop: data.typeDevelop,
       phone: data.phone ?? "",
       email: data.email,
@@ -64,53 +33,80 @@ function BookForm() {
     };
     dispatch(addOrder(booking));
     reset();
+    router.replace("/services/modalwindow");
   };
 
   return (
     <>
       {book.time !== undefined ? (
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <label>Ваше імя</label>
-          <input
-            type="text"
-            className={styles.text_input}
-            {...register("name")}
-          />
-          <label>Тип обєкту</label>
-          <select {...register("typeDevelop")}>
-            <option value="flat">квартира</option>
-            <option value="house">будинок</option>
-            <option value="other">приміщення</option>
-          </select>
-          <label>вулиця:</label>
-          <input className={styles.text_input} {...register("street")} />
-          <label>номер:</label>
-          <input
-            className={styles.text_input}
-            {...register("number")}
-            type="number"
-          />
-          <label>телефон:</label>
-          <input
-            type="text"
-            className={styles.text_input}
-            placeholder="Введіть Ваш телефон"
-            {...register("phone")}
-          />
-          <label>email:</label>
-          <input
-            type="email"
-            className={styles.text_input}
-            placeholder="Введіть Ваш email"
-            {...register("email")}
-          />
-          {errors.email?.message && (
-            <div style={{ color: "red" }}>Введіть email</div>
-          )}
-          <label>орієнтовна площа:</label>
-          <input type="number" {...register("square")} />
-          <input className={styles.submit_btn} type="submit" />
-        </form>
+        <>
+          <h2 className="uppercase font-semibold">
+            Введіть Ваші данні та адресу:
+          </h2>
+          <form onSubmit={handleSubmit(onSubmit)} className={styles.bookform}>
+            <Input
+              type={"text"}
+              placeholder={"Ваше імя"}
+              label={"Ваше імя"}
+              name={"name"}
+              required={true}
+              minLength={3}
+              maxLength={50}
+              register={register}
+              errors={errors}
+            />
+            <label>Тип обєкту</label>
+            <select {...register("typeDevelop")} className={styles.select}>
+              <option value="" disabled selected>
+                Оберіть тип обєкту
+              </option>
+              <option value="квартира">квартира</option>
+              <option value="будинок">будинок</option>
+              <option value="приміщення">приміщення</option>
+            </select>
+            <Input
+              type={"text"}
+              placeholder={"Введіть адресу обєкту"}
+              label={"Вулиця"}
+              name={"adress"}
+              required={true}
+              minLength={3}
+              maxLength={50}
+              register={register}
+              errors={errors}
+            />
+            <Input
+              type={"text"}
+              placeholder={"Введіть номер телефону"}
+              label={"Телефон"}
+              name={"phone"}
+              required={true}
+              pattern={/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/}
+              register={register}
+              errors={errors}
+            />
+            <Input
+              type={"email"}
+              placeholder={"Введіть Ваш email"}
+              label={"Email"}
+              name={"email"}
+              required={true}
+              register={register}
+              errors={errors}
+            />
+            <Input
+              type={"number"}
+              placeholder={"Введіть орієнтовну площу обєкту"}
+              label={"Площа"}
+              name={"square"}
+              required={true}
+              register={register}
+              errors={errors}
+            />
+
+            <input className={styles.submit_btn} type="submit" />
+          </form>
+        </>
       ) : null}
     </>
   );
