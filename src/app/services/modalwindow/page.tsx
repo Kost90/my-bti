@@ -1,16 +1,19 @@
-import Link from 'next/link';
+import Link from "next/link";
+import Button from "@/components/button/Button";
+import styles from './modalwindow.module.css'
 
 const ModalWindowPage = async () => {
-  
   return (
-    <div className="container my-7 md:my-14 flex items-center flex-col gap-8 md:gap-14 h-screen h-min">
-      <h1>Дякуємо за Вашу довіру нам!</h1>
+    <div className={styles.div}>
+      <h1 className={styles.h1}>Дякуємо за Вашу довіру нам!</h1>
       <h2>Наш інженер в найкоротший термін звяжеться з Вами</h2>
-    <Link href={'/'} key={'головна'}>
+      <Button type={"button"}>
+      <Link href={"/"} key={"головна"}>
         Повернутися на головну сторінку
-    </Link>
+      </Link>
+      </Button>
     </div>
-  )
-}
+  );
+};
 
-export default ModalWindowPage
+export default ModalWindowPage;

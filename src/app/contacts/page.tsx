@@ -1,9 +1,10 @@
 import { Container } from "@mui/material";
 import Contacts from "@/components/contacts/Contacts";
+import ThemeContainer from "@/containers/themecontainer/ThemeContainer";
 
 const ContactsPage = async () => {
   return (
-    <div style={{ width: "100%" }}>
+    <ThemeContainer>
       <Container
         sx={{
           paddingTop: { xs: "40px", md: "80px" },
@@ -12,7 +13,7 @@ const ContactsPage = async () => {
       >
         <Contacts />
       </Container>
-    </div>
+    </ThemeContainer>
   );
 };
 

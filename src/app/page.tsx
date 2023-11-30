@@ -5,7 +5,9 @@ import CardList from "@/containers/listcontainer/CardList";
 import AboutUs from "@/ui/aboutus/AboutUs";
 import WhyWe from "@/ui/whywe/WhyWe";
 import Contacts from "@/components/contacts/Contacts";
+import "./globals.css";
 import styles from "./homepage.module.css";
+import ThemeContainer from "@/containers/themecontainer/ThemeContainer";
 
 const contrStyles = {
   paddingTop: { xs: "40px", md: "80px" },
@@ -14,7 +16,7 @@ const contrStyles = {
 
 export default function Home() {
   return (
-    <>
+    <ThemeContainer>
       <Box sx={{ width: "100%" }}>
         <section className={styles.hero_section_bg}>
           <Container
@@ -50,6 +52,6 @@ export default function Home() {
           </Container>
         </section>
       </Box>
-    </>
+    </ThemeContainer>
   );
 }

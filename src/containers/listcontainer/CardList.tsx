@@ -1,15 +1,13 @@
-import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import Card from "../../components/cards/Card";
 import { cardContent } from "@/constants/CardsData";
-import { title, flexContainer } from "../../components/cards/stylesconstans";
+import { flexContainer } from "../../components/cards/stylesconstans";
+import styles from "./CardList.module.css";
 
 const CardList = async () => {
   return (
     <Box>
-      <Typography variant="h4" sx={title}>
-        НАШІ ПОСЛУГИ:
-      </Typography>
+      <h4 className={styles.h4}>НАШІ ПОСЛУГИ:</h4>
       <Box sx={flexContainer}>
         {cardContent.map((item, i) => (
           <Card

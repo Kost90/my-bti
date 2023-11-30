@@ -33,6 +33,18 @@ body {
   height: 100vh;
 }
 
+.layout h4{
+  @apply text-xl md:text-3xl;
+}
+
+.layout h5{
+  @apply text-lg md:text-2xl;
+}
+
+.layout h6{
+  @apply text-base md:text-xl text-slate-500;
+}
+
 .main {
   display: flex;
   flex: 1;

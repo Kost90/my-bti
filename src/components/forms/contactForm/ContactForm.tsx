@@ -1,4 +1,6 @@
 "use client";
+import Button from "@/components/button/Button";
+import { useRouter } from "next/navigation";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { string, object } from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -23,6 +25,8 @@ const contactSchema = {
 };
 
 function ContactForm() {
+  const router = useRouter();
+
   const {
     register,
     handleSubmit,
@@ -35,6 +39,7 @@ function ContactForm() {
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     console.log(data);
     reset();
+    router.replace("/services/modalwindow")
   };
   return (
     <form className={styles.contactform} onSubmit={handleSubmit(onSubmit)}>
@@ -77,9 +82,9 @@ function ContactForm() {
       {errors.message?.message && (
         <div style={{ color: "red" }}>Введіть повідомлення</div>
       )}
-      <button type="submit" className={styles.submit_btn}>
+      <Button type={"submit"}>
         Надіслати
-      </button>
+      </Button>
     </form>
   );
 }

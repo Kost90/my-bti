@@ -3,7 +3,6 @@ import { Box, Typography } from "@mui/material";
 import { aboutUs } from "@/constants/aboutUsData";
 import {
   containerContent,
-  title,
   listText,
   TextContainer,
 } from "./stylesconstans";
@@ -15,9 +14,9 @@ const AboutUs = async () => {
     <Box sx={containerContent}>
       <Image src={AboutUsImg} alt="image" className={styles.img} />
       <Box sx={TextContainer}>
-        <Typography variant="h4" sx={title}>
+        <h4 className={styles.h4}>
           {aboutUs.title}
-        </Typography>
+        </h4>
         <Typography variant="h5" sx={listText}>
           {aboutUs.text}
         </Typography>
