@@ -10,6 +10,7 @@ type HamburgerProps = {
 };
 
 const MenuMobile = memo(({ onClick }: HamburgerProps) => {
+
   const MenuVariants = {
     hidden: {
       x: -100,
@@ -18,10 +19,14 @@ const MenuMobile = memo(({ onClick }: HamburgerProps) => {
       x: 0,
       transition: { duration: 0.5 },
     },
+    exit: {
+      x: -100,
+      transition: { duration: 0.5 },
+    },
   };
 
   return (
-    <motion.div initial={"hidden"} animate={"visible"} variants={MenuVariants}>
+    <motion.div initial={"hidden"} animate={"visible"} exit={{ x: -100, transition: { duration: 0.5 } }} variants={MenuVariants}>
       <Box sx={box}>
         <Button onClick={onClick} component={Link} href="/" color="inherit" sx={textWeght}>
           Головна

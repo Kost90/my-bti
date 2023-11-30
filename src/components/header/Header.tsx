@@ -99,7 +99,7 @@ const Header = () => {
           </Toolbar>
         </Container>
       </AppBar>
-      {isOpen ? <MenuMobile onClick={handelChange} /> : null}
+      <MenuMobile onClick={handelChange} />
     </>
   );
 };
