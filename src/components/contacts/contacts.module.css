@@ -26,6 +26,10 @@
   justify-content: space-between;
 }
 
+.side_contr {
+  @apply container bg-slate-700 w-full rounded-md p-5 md:p-10 md:h-96;
+}
+
 @media (min-width: 768px) {
   .green_elipsis {
     width: 75px;

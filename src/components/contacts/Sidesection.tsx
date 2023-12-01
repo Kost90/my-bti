@@ -8,6 +8,7 @@ import SocialIcon from "../../../public/assets/svg/socialicon.svg";
 import Facebook from "../../../public/assets/svg/socialmedia/Facebook.svg";
 import Twitter from "../../../public/assets/svg/socialmedia/Twitter.svg";
 import Instagram from "../../../public/assets/svg/socialmedia/Instagramm.svg";
+import styles from './contacts.module.css'
 
 const mainBox = {
   backgroundColor: "var(--gray-900, #2A3342)",
@@ -28,7 +29,7 @@ const socialMediaBox = {
 
 function SideSection() {
   return (
-    <Box sx={mainBox}>
+    <div className={styles.side_contr}>
       <Box sx={flexContainer}>
         <Box sx={flexSideSecCard}>
           <Box sx={elips}>
@@ -66,7 +67,7 @@ function SideSection() {
           </Box>
         </Box>
       </Box>
-    </Box>
+    </div>
   );
 }
 

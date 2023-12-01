@@ -8,25 +8,27 @@ import {
   elips,
   titel,
   titelCard,
-  text,
 } from "./stylesconstans";
+import { text } from "./whyweData";
+import styles from './Whywe.module.css'
 
 const WhyWe = () => {
   return (
-    <Box sx={contrContent}>
-      <Typography variant="h4" sx={titel}>
+    <div className={styles.contr_content}>
+      <h4 className={styles.h4_hero}>
         ЧОМУ МИ?
-      </Typography>
+      </h4>
       <Box sx={contrCards}>
         {whyWecontent.map((item, i) => (
-          <Box key={i} sx={card}>
+          <div key={i} className={styles.card}>
             <Box sx={elips}>{item.number}</Box>
-            <Typography sx={titelCard}>{item.title}</Typography>
-            <Typography sx={text}>{item.text}</Typography>
-          </Box>
+            <h5>{item.title}</h5>
+            <h6>{item.text}</h6>
+          </div>
         ))}
       </Box>
-    </Box>
+      <h4 className={styles.h4_bottom}>{text}</h4>
+    </div>
   );
 };
 
