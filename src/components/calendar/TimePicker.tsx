@@ -3,6 +3,7 @@ import { useState, useEffect, memo } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useAppSelector } from "@/lib/hooks";
+import styles from './Calendar.module.css'
 
 interface TimePickerProps {
   time: number[];
@@ -38,7 +39,7 @@ const TimePicker = memo(({ curentDate, onChange, time }: TimePickerProps) => {
   }, [dates]);
 
   return (
-    <div>
+    <div className={styles.container_date}>
       <h4>Обрати час:</h4>
       <DatePicker
         onChange={onChange}

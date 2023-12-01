@@ -9,7 +9,9 @@ import Contacts from "@/components/contacts/Contacts";
 import "./globals.css";
 import styles from "./homepage.module.css";
 import ThemeContainer from "@/containers/themecontainer/ThemeContainer";
-import waveSvg from '../../public/assets/svg/bg/waveherosec.svg'
+import waveSvg from "../../public/assets/svg/bg/waveherosec.svg";
+import tiltWHywe from "../../public/assets/svg/bg/tiltwhysec.svg";
+import LoopLine from "@/ui/loopline/LoopLine";
 
 const contrStyles = {
   paddingTop: { xs: "40px", md: "80px" },
@@ -31,17 +33,19 @@ export default function Home() {
           >
             <Herosection />
             <Carouselsection />
-            <Image src={waveSvg} alt="bg" className={styles.wave}/>
+            <Image src={waveSvg} alt="bg" className={styles.wave} />
           </Container>
         </section>
         <section className={styles.card_list_section}>
           <Container sx={contrStyles}>
             <CardList />
           </Container>
+          <LoopLine />
         </section>
         <section className={styles.aboutus_section}>
           <Container sx={contrStyles}>
             <AboutUs />
+            <Image src={tiltWHywe} alt="svg" className={styles.tilt} />
           </Container>
         </section>
         <section className={styles.why_we_section}>

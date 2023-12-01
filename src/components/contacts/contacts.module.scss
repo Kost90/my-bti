@@ -26,6 +26,16 @@
     justify-content: space-between;
 }
 
+.side_contr{
+    @apply container bg-slate-700 w-full rounded-md p-5 md:p-10 md:h-96;
+//     backgroundColor: "var(--gray-900, #2A3342)",
+//   width: "100%",
+//   borderRadius: "10px",
+//   padding: { xs: "20px", md: "40px" },
+//   maxWidth: "520px",
+//   height: { md: "440px" },
+}
+
 @media (min-width: 768px) {
     .green_elipsis {
         width: 75px;

@@ -3,6 +3,7 @@ import { memo } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { isWeekdayAndPassday } from "./helpers";
+import styles from './Calendar.module.css'
 
 interface DatesPickerProps {
   currentDate:string;
@@ -11,7 +12,7 @@ interface DatesPickerProps {
 
 const DatesPicker = memo(({ onChange,currentDate }: DatesPickerProps) => {
   return (
-    <div>
+    <div className={styles.container_date}>
     <h4>Оберіть дату виїзду:</h4>
     <DatePicker
       filterDate={isWeekdayAndPassday}
