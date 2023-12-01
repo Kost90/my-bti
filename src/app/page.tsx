@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Box, Container } from "@mui/material";
 import Carouselsection from "@/containers/carouselsection/Carouselsection";
 import Herosection from "@/ui/herosection/Herosection";
@@ -8,6 +9,7 @@ import Contacts from "@/components/contacts/Contacts";
 import "./globals.css";
 import styles from "./homepage.module.css";
 import ThemeContainer from "@/containers/themecontainer/ThemeContainer";
+import waveSvg from '../../public/assets/svg/bg/waveherosec.svg'
 
 const contrStyles = {
   paddingTop: { xs: "40px", md: "80px" },
@@ -29,6 +31,7 @@ export default function Home() {
           >
             <Herosection />
             <Carouselsection />
+            <Image src={waveSvg} alt="bg" className={styles.wave}/>
           </Container>
         </section>
         <section className={styles.card_list_section}>
