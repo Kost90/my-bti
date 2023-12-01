@@ -1,12 +1,3 @@
-// .menu{
-//     &::after{
-//         content: "";
-//     width: 100vh;
-//     background-color: rgb(8 6 6 / 24%);
-//     height: 100vh;
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     z-index: -1;
-//     }
-// }
+.menu{
+  z-index: 5;
+}

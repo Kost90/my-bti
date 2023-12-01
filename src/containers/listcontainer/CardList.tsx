@@ -10,7 +10,8 @@ const CardList = () => {
   const [selectedId, setSelectedId] = useState("");
 
   return (
-    <motion.div>
+    <section className={styles.card_list_section}>
+ <motion.div>
       <motion.h4
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -96,6 +97,7 @@ const CardList = () => {
         )}
       </AnimatePresence>
     </motion.div>
+    </section>
   );
 };
 
