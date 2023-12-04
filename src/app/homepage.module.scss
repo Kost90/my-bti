@@ -1,6 +1,7 @@
+
 .hero_section_bg {
     position: relative;
-    padding: 10vh 0 10vh 0;
+    padding: 20vh 0 20vh 0;
     width: 100%;
     background: radial-gradient(50% 50% at 50% 50%, rgba(247, 248, 249, 0) 0%, #f7f8f9 100%);
     z-index: 1;
@@ -15,6 +16,7 @@
 
 .aboutus_section {
     position: relative;
+    padding-top: 10vh;
     padding-bottom: 20vh;
     background: var(--gray-900, #2a3342);
     width: 100%;

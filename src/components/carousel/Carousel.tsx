@@ -1,6 +1,6 @@
 "use client";
 import Carousel from "react-material-ui-carousel";
-import Item from "../caruseiItem/Item";
+import Item from "./item/Item";
 import styles from "./Carousel.module.css";
 
 const content = [

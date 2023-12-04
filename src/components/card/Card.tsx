@@ -1,30 +1,20 @@
 "use client";
-import { useState } from "react";
-import { cardContent } from "@/constants/CardsData";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import styles from "./CardList.module.css";
-import Link from "next/link";
+import { cardContent } from "@/constants/CardsData";
+import styles from "./Card.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
-const CardList = () => {
+function Card() {
   const [selectedId, setSelectedId] = useState("");
 
   return (
-    <section className={styles.card_list_section}>
- <motion.div>
-      <motion.h4
-        initial={{ opacity: 0, x: -100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.3 }}
-        viewport={{ once: true }}
-        className={styles.h4}
-      >
-        НАШІ ПОСЛУГИ:
-      </motion.h4>
+    <>
       <motion.div
         initial={{ opacity: 0, y: -100 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.7 }}
         viewport={{ once: true }}
         className={styles.grid_container}
       >
@@ -47,7 +37,6 @@ const CardList = () => {
           </motion.div>
         ))}
       </motion.div>
-
       <AnimatePresence>
         {selectedId && (
           <motion.div
@@ -96,9 +85,8 @@ const CardList = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.div>
-    </section>
+    </>
   );
-};
+}
 
-export default CardList;
+export default Card;

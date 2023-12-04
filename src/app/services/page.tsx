@@ -1,4 +1,4 @@
-import CardList from "@/containers/listcontainer/CardList";
+import CardList from "@/containers/cardslist/CardList";
 import React from "react";
 
 const Services = async () => {

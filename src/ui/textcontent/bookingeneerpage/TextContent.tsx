@@ -2,7 +2,7 @@ import styles from './TextContent.module.css'
 
 function TextContent() {
   return (
-    <div className="text-sm md:text-lg">
+    <div>
         <h1 className={styles.h1}>Під час обміру Вашого обєкту, Вам необхідно мати копії наступних документів:</h1>
         <ul className={styles.ul}>
             <li>копія правоустановчих документів на обєкт (договір купівлі-продажу, спадщина, дарування тощо).</li>
