@@ -1,16 +1,16 @@
-import Calendar from '@/components/calendar/Calendar'
-import BookForm from '@/components/forms/bookingeneer/BookForm'
-import TextContent from '@/ui/textcontent/bookingeneerpage/TextContent'
+import Calendar from "@/components/calendar/Calendar";
+import BookForm from "@/components/forms/bookingeneer/BookForm";
+import TextContent from "@/ui/textcontent/bookingeneerpage/TextContent";
+import styles from "./page.module.css";
 
-const TechnicalpasportService =async () => {
-  
+const TechnicalpasportService = async () => {
   return (
-    <div className="container my-7 md:my-14 flex items-center flex-col gap-8 md:gap-14 min-h-screen">
-      <TextContent/>
-      <Calendar/>
-      <BookForm/>
+    <div className={styles.page_container}>
+      <TextContent />
+      <Calendar />
+      <BookForm />
     </div>
-  )
-}
+  );
+};
 
-export default TechnicalpasportService
+export default TechnicalpasportService;

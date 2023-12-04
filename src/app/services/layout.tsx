@@ -26,8 +26,8 @@ export default function ServicesLayout({
   console.log(pathname);
 
   return (
-    <div>
-      <div className="container flex items-baseline justify-between md:justify-center md:gap-14 text-sm md:text-lg my-7">
+    <div >
+      <div className="container  flex items-baseline justify-between md:justify-center md:gap-14 text-sm md:text-lg my-7">
         {links.map((link) => (
           <Link
             key={link.name}

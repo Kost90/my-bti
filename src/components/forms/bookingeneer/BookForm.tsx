@@ -60,9 +60,9 @@ function BookForm() {
               <option value="" disabled selected>
                 Оберіть тип обєкту
               </option>
-              <option value="квартира">квартира</option>
-              <option value="будинок">будинок</option>
-              <option value="приміщення">приміщення</option>
+              <option value={TypeDevelopEnum.flat}>квартира</option>
+              <option value={TypeDevelopEnum.house}>будинок</option>
+              <option value={TypeDevelopEnum.other}>приміщення</option>
             </select>
             <Input
               type={"text"}

@@ -5,18 +5,19 @@ import styles from "./LoopLine.module.css";
 function LoopLine() {
   const variants = {
     hidden: {
-      x: -450,
+      x: "110%",
     },
     visible: {
-      x: "100%",
+      x: -450,
       linear: "linear",
       transition: { repeat: Infinity, duration: 40 },
     },
   };
+
   return (
     <div className={styles.loop_container}>
       <motion.p initial="hidden" animate="visible" variants={variants}>
-        отримуй знижку -10% за онлайн виклик інженера
+        отримуй знижку <span>-10% за онлайн виклик інженера</span>
       </motion.p>
     </div>
   );

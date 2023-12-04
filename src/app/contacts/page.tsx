@@ -1,5 +1,5 @@
 import { Container } from "@mui/material";
-import Contacts from "@/components/contacts/Contacts";
+import Contacts from "@/ui/contacts/Contacts";
 import ThemeContainer from "@/containers/themecontainer/ThemeContainer";
 
 const ContactsPage = async () => {

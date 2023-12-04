@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import SideSection from "./Sidesection";
-import ContactForm from "../forms/contactForm/ContactForm";
+import ContactForm from "../../components/forms/contactForm/ContactForm";
 import { title } from "./stylesconstans";
 
 const containerBox = {
