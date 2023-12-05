@@ -1,10 +1,8 @@
 "use client";
 import { memo } from "react";
-import { Button, Box } from "@mui/material";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { box, textWeght } from "./styleconstans";
-import styles from './MenuMobile.module.css'
+import styles from "./MenuMobile.module.css";
 
 type HamburgerProps = {
   onClick: () => void;
@@ -14,14 +12,14 @@ type HamburgerProps = {
 const MenuMobile = memo(({ onClick, isOpen }: HamburgerProps) => {
   const MenuVariants = {
     hidden: {
-      x: "-50vw",
+      y: "-50vh",
     },
     visible: {
-      x: "0vw",
+      y: "0vh",
       transition: { duration: 0.5 },
     },
     exit: {
-      x: "-50vw",
+      y: "-50vh",
       transition: { duration: 0.5 },
     },
   };
@@ -33,44 +31,40 @@ const MenuMobile = memo(({ onClick, isOpen }: HamburgerProps) => {
       variants={MenuVariants}
       className={styles.menu}
     >
-      <Box sx={box}>
-        <Button
+      <div className={styles.div_menu}>
+        <Link
           onClick={onClick}
-          component={Link}
           href="/"
           color="inherit"
-          sx={textWeght}
+          className={styles.link}
         >
           Головна
-        </Button>
-        <Button
+        </Link>
+        <Link
           onClick={onClick}
-          component={Link}
           href="/aboutus"
           color="inherit"
-          sx={textWeght}
+          className={styles.link}
         >
           Про нас
-        </Button>
-        <Button
+        </Link>
+        <Link
           onClick={onClick}
-          component={Link}
           href="/services"
           color="inherit"
-          sx={textWeght}
+          className={styles.link}
         >
           Послуги
-        </Button>
-        <Button
+        </Link>
+        <Link
           onClick={onClick}
-          component={Link}
           href="/contacts"
           color="inherit"
-          sx={textWeght}
+          className={styles.link}
         >
           Контакти
-        </Button>
-      </Box>
+        </Link>
+      </div>
     </motion.div>
   );
 });

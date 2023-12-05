@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { string, object } from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import Input from "@/components/input/Input";
 import styles from "./contactForm.module.css";
 
 type Inputs = {
@@ -39,39 +40,39 @@ function ContactForm() {
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     console.log(data);
     reset();
-    router.replace("/services/modalwindow")
+    router.replace("/services/modalwindow");
   };
   return (
     <form className={styles.contactform} onSubmit={handleSubmit(onSubmit)}>
-      <input
-        type="text"
-        placeholder="Введіть Ваше імя"
-        className={styles.text_input}
-        {...register("name", { required: true })}
+      <Input
+        type={"text"}
+        placeholder={"Введіть Ваше імя"}
+        name={"name"}
+        register={register}
+        label={"Імя та побатькові:"}
+        required={true}
+        errors={errors}
       />
-      {errors.name?.message && (
-        <div style={{ color: "red" }}>Імя це обовязкове поле</div>
-      )}
 
-      <input
-        type="email"
-        placeholder="Введіть Ваш email"
-        className={styles.text_input}
-        {...register("email", { required: true })}
+      <Input
+        type={"email"}
+        placeholder={"Введіть Ваш email"}
+        name={"email"}
+        register={register}
+        label={"Введіть email:"}
+        required={true}
+        errors={errors}
       />
-      {errors.email?.message && (
-        <div style={{ color: "red" }}>Введіть email</div>
-      )}
 
-      <input
-        type="text"
-        placeholder="Введіть Ваш телефон"
-        className={styles.text_input}
-        {...register("phone", { required: true })}
+      <Input
+        type={"text"}
+        placeholder={"Введіть Ваш телефон"}
+        name={"phone"}
+        register={register}
+        label={"Введіть номер телефону:"}
+        required={true}
+        errors={errors}
       />
-      {errors.phone?.message && (
-        <div style={{ color: "red" }}>Введіть номер телефону</div>
-      )}
 
       <textarea
         placeholder="Ваше повідомлення"
@@ -82,9 +83,7 @@ function ContactForm() {
       {errors.message?.message && (
         <div style={{ color: "red" }}>Введіть повідомлення</div>
       )}
-      <Button type={"submit"}>
-        Надіслати
-      </Button>
+      <Button type={"submit"}>Надіслати</Button>
     </form>
   );
 }

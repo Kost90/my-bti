@@ -3,7 +3,6 @@ export const containerContent = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems:'center',
-
 }
 
 export const title = {

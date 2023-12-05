@@ -44,7 +44,7 @@ const Header = () => {
 
   return (
     <>
-      <AppBar position="static" sx={{ backgroundColor: "inherit" }}>
+      <AppBar position="static" sx={{ backgroundColor: "white", zIndex: 20}}>
         <Container>
           <Toolbar sx={{ justifyContent: "space-between" }}>
             <Box sx={log_container}>

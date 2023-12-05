@@ -8,6 +8,10 @@ import SocialIcon from "../../../public/assets/svg/socialicon.svg";
 import Facebook from "../../../public/assets/svg/socialmedia/Facebook.svg";
 import Twitter from "../../../public/assets/svg/socialmedia/Twitter.svg";
 import Instagram from "../../../public/assets/svg/socialmedia/Instagramm.svg";
+import Greenelipsis from "../../../public/assets/svg/greenelipsis.svg";
+import Orangevector from "../../../public/assets/svg/orangvector.svg";
+import Dangervector from "../../../public/assets/svg/dangervector.svg";
+import Purpleelipsis from "../../../public/assets/svg/purpleelipsis.svg";
 import styles from './contacts.module.css'
 
 const mainBox = {
@@ -30,43 +34,48 @@ const socialMediaBox = {
 function SideSection() {
   return (
     <div className={styles.side_contr}>
-      <Box sx={flexContainer}>
-        <Box sx={flexSideSecCard}>
-          <Box sx={elips}>
+      <Image src={Orangevector} alt="svg_icon" className={styles.orange_vector}/>
+      <Image src={Greenelipsis} alt="svg_icon" className={styles.green_elipsis}/>
+      <div className={styles.flex_container}>
+        <div className={styles.side_sec_card}>
+          <div className={styles.elips}>
             <Image src={EmailIcon} alt="emailicon" />
-          </Box>
-          <Typography>Email:</Typography>
-          <Typography>mybti@gmail.com</Typography>
-        </Box>
+          </div>
+          <p>Email:</p>
+          <p>mybti@gmail.com</p>
+        </div>
 
-        <Box sx={flexSideSecCard}>
-          <Box sx={elips}>
+        <div className={styles.side_sec_card}>
+          <div className={styles.elips}>
             <Image src={PhoneIcon} alt="phoneicon" />
-          </Box>
-          <Typography>Телефон:</Typography>
-          <Typography>+380637306501</Typography>
-        </Box>
-      </Box>
-      <Box sx={flexContainer}>
-        <Box sx={flexSideSecCard}>
-          <Box sx={elips}>
+          </div>
+          <p>Телефон:</p>
+          <p>+380637306501</p>
+        </div>
+      </div>
+      <div className={styles.flex_container}>
+        <div className={styles.side_sec_card}>
+          <div className={styles.elips}>
             <Image src={LocationIcon} alt="locationIcon" />
-          </Box>
-          <Typography>Офіс:</Typography>
-          <Typography>м.Одеса,вул.Катерининська, буд.8/10</Typography>
-        </Box>
-        <Box sx={flexSideSecCard}>
-          <Box sx={elips}>
+          </div>
+          <p>Офіс:</p>
+          <p>м.Одеса,вул.Катерининська,</p>
+          <p>буд.8/10</p>
+        </div>
+        <div className={styles.side_sec_card}>
+          <div className={styles.elips}>
             <Image src={SocialIcon} alt="socialIcon" />
-          </Box>
-          <Typography>Соціальні мережі:</Typography>
+          </div>
+          <p>Соціальні мережі:</p>
           <Box sx={socialMediaBox}>
             <Image src={Facebook} alt="facebookIcon" />
             <Image src={Twitter} alt="TwitterIcon" />
             <Image src={Instagram} alt="InstagramIcon" />
           </Box>
-        </Box>
-      </Box>
+        </div>
+      </div>
+      <Image src={Purpleelipsis} alt="svg_icon" className={styles.purple_elipsis}/>
+      <Image src={Dangervector} alt="svg_icon" className={styles.danger_vector}/>
     </div>
   );
 }
