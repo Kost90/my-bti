@@ -104,7 +104,7 @@ function BookForm() {
               register={register}
               errors={errors}
             />
-            <Button type={'submit'}>Надіслати</Button>
+            <Button type={"submit"}>Надіслати</Button>
           </form>
         </>
       ) : null}

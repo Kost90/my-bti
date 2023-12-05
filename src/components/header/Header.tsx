@@ -29,22 +29,22 @@ const log_container = {
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const theme = useAppSelector((state) => state.theme.theme)
+  const theme = useAppSelector((state) => state.theme.theme);
   const dispatch = useAppDispatch();
 
   const handelChange = useCallback(() => {
-    if(theme === 'light'){
-      dispatch(addTheme('dark'))
+    if (theme === "light") {
+      dispatch(addTheme("dark"));
       setIsOpen((prev) => !prev);
-    }else{
-      dispatch(addTheme('light'))
+    } else {
+      dispatch(addTheme("light"));
       setIsOpen((prev) => !prev);
     }
   }, [isOpen]);
 
   return (
     <>
-      <AppBar position="static" sx={{ backgroundColor: "white", zIndex: 20}}>
+      <AppBar position="static" sx={{ backgroundColor: "white", zIndex: 20 }}>
         <Container>
           <Toolbar sx={{ justifyContent: "space-between" }}>
             <Box sx={log_container}>
@@ -109,7 +109,7 @@ const Header = () => {
           </Toolbar>
         </Container>
       </AppBar>
-      <MenuMobile isOpen={isOpen} onClick={handelChange}/>
+      <MenuMobile isOpen={isOpen} onClick={handelChange} />
     </>
   );
 };

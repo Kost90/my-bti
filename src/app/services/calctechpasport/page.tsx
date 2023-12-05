@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import CalcResult from "@/components/calculator/CalculatorTP";
+import styles from "./calctechpasp.module.css";
 
 function CalcPasportPage() {
   return (
-    <div className="container my-7 md:my-14 flex items-center flex-col gap-8 md:gap-14 min-h-screen">Calculate techpassport page</div>
-  )
+    <div className={styles.container}>
+      <CalcResult />
+    </div>
+  );
 }
 
-export default CalcPasportPage
+export default CalcPasportPage;
