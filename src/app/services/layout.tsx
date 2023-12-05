@@ -42,7 +42,7 @@ export default function ServicesLayout({
           </Link>
         ))}
       </div>
-      <div>{children}</div>
+      <div className="container">{children}</div>
     </div>
   );
 }

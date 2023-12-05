@@ -28,7 +28,7 @@ export const elips = {
 
   export const flexSideSecCard = {
     display: "flex",
-    alignItems: "flex-start",
+    alignItems: "center",
     justifyContent: "center",
     flexDirection:'column',
     gap:'10px',

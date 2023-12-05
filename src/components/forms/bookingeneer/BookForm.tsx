@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 import { useForm, SubmitHandler } from "react-hook-form";
 import Input from "@/components/input/Input";
+import Button from "@/components/button/Button";
 import { useAppSelector } from "@/lib/hooks";
 import { useAppDispatch } from "@/lib/hooks";
 import { addOrder } from "@/lib/features/orders/OrderSlice";
@@ -55,7 +56,7 @@ function BookForm() {
               register={register}
               errors={errors}
             />
-            <label>Тип обєкту</label>
+            <label className={styles.label}>Тип обєкту</label>
             <select {...register("typeDevelop")} className={styles.select}>
               <option value="" disabled selected>
                 Оберіть тип обєкту
@@ -103,8 +104,7 @@ function BookForm() {
               register={register}
               errors={errors}
             />
-
-            <input className={styles.submit_btn} type="submit" />
+            <Button type={'submit'}>Надіслати</Button>
           </form>
         </>
       ) : null}

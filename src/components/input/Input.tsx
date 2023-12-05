@@ -39,7 +39,7 @@ function Input({
 }: InputProps) {
   return (
     <>
-      <label>{label}</label>
+      <label className={styles.label}>{label}</label>
       <input
         type={type}
         placeholder={placeholder}
