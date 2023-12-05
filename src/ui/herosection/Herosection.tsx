@@ -1,43 +1,48 @@
+"use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Typography, Box } from "@mui/material";
+import { listContent } from "./listdata";
 import Checkbox from "../../../public/assets/svg/Checkbox.svg";
-import { title, TextContainer, listText } from "./stylesconstants";
 import styles from "./Herosection.module.css";
 
 const Herosection = () => {
+  const Variants = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      ease: "easeOut",
+    },
+  };
+
   return (
-    <Box sx={TextContainer}>
-      <Typography variant="h4" sx={title}>
+    <div className={styles.text_container}>
+      <h4>
         <span style={{ textTransform: "uppercase", color: "#22C55E" }}>
           Моє БТІ
         </span>{" "}
-        - це Ваш найдійний помічник з оформлення нерухомості.
-      </Typography>
+        - ваш надійний партнер у сфері оформлення нерухомості.
+      </h4>
       <ul className={styles.ul_container}>
-        <li>
-          <Image src={Checkbox} alt="checkbox" />
-          <Typography variant="h6" sx={listText}>
-            Сучасний підхід до надання якісних послуг у сфері оформлення
-            нерухомості
-          </Typography>
-        </li>
-
-        <li>
-          <Image src={Checkbox} alt="checkbox" />
-          <Typography variant="h6" sx={listText}>
-            Захист прав та інтересів клієнтів
-          </Typography>
-        </li>
-
-        <li>
-          <Image src={Checkbox} alt="checkbox" />
-          <Typography variant="h6" sx={listText}>
-            Дотримання термінів надання послуг, згідно з укладеним договором
-          </Typography>
-        </li>
+        {listContent.map((el, i) => (
+          <motion.li
+            initial={"hidden"}
+            whileInView={"visible"}
+            transition={{
+              duration: 1,
+              delay: i * 0.5,
+            }}
+            viewport={{ amount: 0.2, once: true }}
+            variants={Variants}
+            key={i}
+          >
+            <Image src={Checkbox} alt="checkbox" />
+            <h6 className={styles.list_text}>{el}</h6>
+          </motion.li>
+        ))}
       </ul>
-    </Box>
+    </div>
   );
 };
 
